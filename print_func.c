@@ -1,5 +1,6 @@
 #include <stdarg.h>
 #include "holberton.h"
+#include <stdio.h>
 
 /**
  * print_char - print a character.
@@ -27,13 +28,26 @@ int print_char(va_list ch)
 int print_str(va_list str)
 {
 	int c = 0;
+	char *nul = "(null)";
 	char *s =  va_arg(str, char *);
 
-	while (*s)
+	if (s == NULL)
 	{
-		_putchar(*s);
-		c++;
-		s++;
+		while (*nul)
+		{
+			_putchar(*nul);
+			nul++;
+			c++;
+		}
+	}
+	else
+	{
+		while (*s)
+		{
+			_putchar(*s);
+			c++;
+			s++;
+		}
 	}
 	return (c);
 }
