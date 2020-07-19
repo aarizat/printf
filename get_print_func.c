@@ -26,36 +26,20 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			if (format[i] == '%')
+			for (j = 0; j < 4; j++)
 			{
-				_putchar(format[i]);
-				count++;
+				if (format[i] == a[j].id)
+				{
+					f_prnt = a[j].fp;
+					c = f_prnt(args);
+					count = count + c;
+					break;
+				}
 			}
-			else
+			if (j == 4)
 			{
-				for (j = 0; j < 4; j++)
-				{
-					if (format[i] == a[j].id)
-					{
-						f_prnt = a[j].fp;
-						c = f_prnt(args);
-						count = count + c;
-						break;
-					}
-				}
-				if (j == 4 && format[i] == 'r')
-				{
-					_putchar(format[i - 1]);
-					count++;
-					_putchar(format[i]);
-					count++;
-				}
-				else if (j == 4)
-				{
-					_putchar(format[i - 1]);
-					count++;
-					i--;
-				}
+				c = print_spe(format[i]);
+				count = count + c;
 			}
 		}
 		i++;
