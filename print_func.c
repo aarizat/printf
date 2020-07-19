@@ -100,3 +100,34 @@ int print_int(va_list integer)
 	}
 	return (count);
 }
+
+/**
+ * print_spe - print an integer.
+ * @c: character to print.
+ *
+ * Return: nothing.
+ */
+
+int print_spe(char c)
+{
+	int count = 0;
+
+	if (c == '%')
+	{
+		_putchar('%');
+		count++;
+	}
+	else if (c == 'r')
+	{
+		_putchar('%');
+		count++;
+		_putchar('r');
+		count++;
+	}
+	else
+	{
+		_putchar('%');
+		count++;
+	}
+	return (count);
+}
