@@ -43,11 +43,16 @@ int _printf(const char *format, ...)
 						break;
 					}
 				}
-				if (j == 4)
+				if (j == 4 && format[i] == 'r')
 				{
 					_putchar(format[i - 1]);
 					count++;
 					_putchar(format[i]);
+					count++;
+				}
+				else if (j == 4)
+				{
+					_putchar(format[i - 1]);
 					count++;
 				}
 			}
