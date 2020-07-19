@@ -31,7 +31,7 @@ int print_str(va_list str)
 	char *nul = "(null)";
 	char *s =  va_arg(str, char *);
 
-	if (s == NULL)
+	if (s == NULL || s == 0)
 	{
 		while (*nul)
 		{
