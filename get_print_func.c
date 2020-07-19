@@ -15,8 +15,11 @@ int _printf(const char *format, ...)
 	ft a[] = {{'c', print_char}, {'s', print_str}, {'d', print_int},
 		  {'i', print_int}, {'\0', NULL},
 	};
+
+	if (format == NULL)
+		return (-1);
 	va_start(args, format);
-	while (format != NULL && format[i] != '\0')
+	while (format[i] != '\0')
 	{
 		if (format[i] != '%')
 		{
