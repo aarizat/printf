@@ -117,16 +117,11 @@ int print_spe(char c)
 		_putchar('%');
 		count++;
 	}
-	else if (c == 'r')
-	{
-		_putchar('%');
-		count++;
-		_putchar('r');
-		count++;
-	}
 	else
 	{
 		_putchar('%');
+		count++;
+		_putchar(c);
 		count++;
 	}
 	return (count);
