@@ -13,7 +13,7 @@ int _printf(const char *format, ...)
 	int (*f_prnt)(va_list);
 	int i = 0, j, count = 0, c = 0;
 	ft a[] = {{'c', print_char}, {'s', print_str}, {'d', print_int},
-		  {'i', print_int}, {'\0', NULL},
+		  {'i', print_int}, {'b', print_bin}, {'\0', NULL},
 	};
 
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
