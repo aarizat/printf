@@ -126,3 +126,26 @@ int print_spe(char c)
 	}
 	return (count);
 }
+
+/**
+ * print_bin - print from decimal to binary.
+ * @n: number to convert to binary.
+ *
+ * Return: number of bytes printed.
+ */
+
+int print_bin(va_list n)
+{
+	unsigned int num = va_arg(n, unsigned int);
+	int i, j, c = 1;
+	int arr[9] = {num % 2};
+
+	for (i = num / 2; i; i = i / 2)
+	{
+		arr[c] = i % 2;
+		c++;
+	}
+	for (j = c - 1; j >= 0; j--)
+		_putchar('0' +  arr[j]);
+	return (c);
+}
