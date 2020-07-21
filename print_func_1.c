@@ -1,6 +1,7 @@
 #include <stdarg.h>
 #include "holberton.h"
 #include <stdio.h>
+
 /**
  * print_ui - print an undigned int.
  * @ui: number to print.
@@ -34,4 +35,28 @@ int print_ui(va_list ui)
 		len = len / 10;
 	}
 	return (count);
+}
+
+/**
+ * print_oct - print from decimal to octal
+ * @n: number to convert.
+ *
+ * Return: nothing.
+ */
+
+int print_oct(va_list n)
+{
+	unsigned int num = va_arg(n, unsigned int);
+	int i, j, c = 1;
+	int arr[1000];
+
+	arr[0] = num % 8;
+	for (i = num / 8; i; i = i / 8)
+	{
+		arr[c] = i % 8;
+		c++;
+	}
+	for (j = c - 1; j >= 0; j--)
+		_putchar('0' + arr[j]);
+	return (c);
 }
