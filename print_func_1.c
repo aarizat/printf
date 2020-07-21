@@ -152,6 +152,11 @@ int print_rot13(va_list s)
 					break;
 				}
 			}
+			if (j == 52)
+			{
+				_putchar(str[i]);
+				count++;
+			}
 			i++;
 		}
 	}
