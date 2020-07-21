@@ -115,3 +115,33 @@ int print_HEX(va_list n)
 	}
 	return (c);
 }
+
+/**
+ * print_rot13 - Encode a string using rot 13
+ * @s: string to enconde
+ *
+ * Return: number of characters pinted.
+ */
+
+int print_rot13(va_list s)
+{
+	char *str = va_arg(s, char *);
+	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	int i = 0, j = 0, count = 0;
+
+	while (str[i] != '\0')
+	{
+		for (j = 0; j < 52; j++)
+		{
+			if (str[i] == input[j])
+			{
+				_putchar(output[j]);
+				count++;
+				break;
+			}
+		}
+		i++;
+	}
+	return (count);
+}
