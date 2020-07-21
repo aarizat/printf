@@ -24,4 +24,5 @@ int print_bin(va_list n);
 int print_ui(va_list ui);
 int print_oct(va_list n);
 int print_hex(va_list n);
+int print_HEX(va_list n);
 #endif /*_HOLBERTON_H*/
