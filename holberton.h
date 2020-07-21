@@ -27,4 +27,6 @@ int print_hex(va_list n);
 int print_HEX(va_list n);
 int print_rot13(va_list s);
 int print_rev(va_list str);
+int print_S(va_list s);
+int conv_HEX(char str);
 #endif /*_HOLBERTON_H*/
