@@ -12,19 +12,32 @@
 int print_rev(va_list str)
 {
 	int c = 0, i, len;
+	char *nul = "(null)";
 	char *s =  va_arg(str, char *);
 
-	i = 0;
-	while (s[i] != '\0')
+	if (s == NULL || s == 0)
 	{
-		len = i + 1;
-		i++;
+		while (*nul)
+		{
+			_putchar(*nul);
+			nul++;
+			c++;
+		}
 	}
-	while (len > 0)
+	else
 	{
-		_putchar(s[len - 1]);
-		c++;
-		len--;
+		i = 0;
+		while (s[i] != '\0')
+		{
+			len = i + 1;
+			i++;
+		}
+		while (len > 0)
+		{
+			_putchar(s[len - 1]);
+			c++;
+			len--;
+		}
 	}
 	return (c);
 }
