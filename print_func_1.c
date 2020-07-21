@@ -128,20 +128,32 @@ int print_rot13(va_list s)
 	char *str = va_arg(s, char *);
 	char input[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
 	char output[] = "NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm";
+	char *nul = "(null)";
 	int i = 0, j = 0, count = 0;
 
-	while (str[i] != '\0')
+	if (str == NULL)
 	{
-		for (j = 0; j < 52; j++)
-		{
-			if (str[i] == input[j])
-			{
-				_putchar(output[j]);
-				count++;
-				break;
-			}
+		while (*nul)
+		{	_putchar(*nul);
+			count++;
+			nul++;
 		}
-		i++;
+	}
+	else
+	{
+		while (str[i] != '\0')
+		{
+			for (j = 0; j < 52; j++)
+			{
+				if (str[i] == input[j])
+				{
+					_putchar(output[j]);
+					count++;
+					break;
+				}
+			}
+			i++;
+		}
 	}
 	return (count);
 }
