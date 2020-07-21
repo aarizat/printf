@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int i = 0, j, count = 0, c = 0;
 	ft a[] = {{'c', print_char}, {'s', print_str}, {'d', print_int},
 		  {'i', print_int}, {'b', print_bin}, {'u', print_ui},
-		  {'o', print_oct}, {'\0', NULL},
+		  {'o', print_oct}, {'x', print_hex}, {'\0', NULL},
 	};
 
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			for (j = 0; j < 7; j++)
+			for (j = 0; j < 8; j++)
 			{
 				if (format[i] == a[j].id)
 				{
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (j == 7)
+			if (j == 8)
 			{
 				c = print_spe(format[i]);
 				count = count + c;
