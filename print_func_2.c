@@ -41,12 +41,14 @@ int print_rev(va_list str)
 	}
 	return (c);
 }
+
 /**
  * print_S - prints a string
  * @str: string to be printed
  *
  * Return: number of characters printed.
  */
+
 int print_S(va_list str)
 {
 	int c = 0;
@@ -115,6 +117,53 @@ int conv_HEX(char n)
 			arr[j] = arr[j] + 7;
 		}
 		_putchar('0' + arr[j]);
+	}
+	return (c);
+}
+
+/**
+ * print_p - print the address memory from a pointer.
+ * @pointer: pointer.
+ *
+ * Return: number of printed characters
+ */
+
+int print_p(va_list pointer)
+{
+	unsigned long int p = va_arg(pointer, unsigned long int);
+	unsigned long int i;
+	int j, c = 1;
+	int  arr[1000];
+	char *nil = "(nil)";
+
+	if (p == 0)
+	{
+		c = 0;
+		while (*nil)
+		{
+			c += _putchar(*nil);
+			nil++;
+		}
+	}
+	else
+	{
+		_putchar(48);
+		_putchar(120);
+		arr[0] = p % 16;
+		for (i = p / 16; i; i = i / 16)
+		{
+			arr[c] = i % 16;
+			c++;
+		}
+		for (j = c - 1; j >= 0; j--)
+		{
+			if (arr[j] > 9)
+			{
+				arr[j] = arr[j] + 39;
+			}
+			_putchar('0' + arr[j]);
+		}
+		c += 2;
 	}
 	return (c);
 }
