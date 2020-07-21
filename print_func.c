@@ -138,7 +138,7 @@ int print_bin(va_list n)
 {
 	unsigned int num = va_arg(n, unsigned int);
 	int i, j, c = 1;
-	int arr[9];
+	int arr[1000];
 
 	arr[0] = num % 2;
 	for (i = num / 2; i; i = i / 2)
