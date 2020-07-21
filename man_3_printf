@@ -29,6 +29,18 @@ s     The const char * argument is expected to be a pointer to an array of chara
 
 %     A '%' is written.  No argument is converted.  The complete conversion specification is '%%'.
 
+o, u, x, X  The unsigned int argument is converted to unsigned octal (o), unsigned decimal (u), or unsigned hexadecimal (x and X) notation. The letters abcdef are used for x conversions; the letters ABCDEF are used for X conversions.
+
+p     The void * pointer argument is printed in hexadecimal.
+
+b     The unsigned int argument is converted to binary notation.
+
+S     The argument string is printed without non printable character ASCII value. These chars are printed this way: \x, followed by the ASCII code value in hexadecimal in upper case.
+
+r     The string argument is printed in reverse.
+
+R     The string argument is converted to rot13 encode.
+
 .SH RETURN VALUE
 
 Upon successful return, these functions return the number of characters printed (excluding the null byte used to end output to strings).
@@ -63,5 +75,8 @@ int main()
  return (0);
  }
 
+.SH BUGS
+Report bugs @aarizatr@gmail.com & 1776@holbertonschool.com
+
 .SH AUTHORS
-Written by Andrés Ariza and Ana Morales.
+Written by Andres Ariza-Trina  &  Ana Ruth Morales.
