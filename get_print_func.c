@@ -30,7 +30,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			for (j = 0; j < 5; j++)
+			for (j = 0; j < 6; j++)
 			{
 				if (format[i] == a[j].id)
 				{
@@ -40,7 +40,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (j == 5)
+			if (j == 6)
 			{
 				c = print_spe(format[i]);
 				count = count + c;
