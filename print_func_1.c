@@ -60,3 +60,31 @@ int print_oct(va_list n)
 		_putchar('0' + arr[j]);
 	return (c);
 }
+/**
+ * print_hex - print from decimal to hexadecimal
+ * @n: number to convert.
+ *
+ * Return: number of preintedd characters
+ */
+int print_hex(va_list n)
+{
+	unsigned int num = va_arg(n, unsigned int);
+	int i, j, c = 1;
+	int arr[1000];
+
+	arr[0] = num % 16;
+	for (i = num / 16; i; i = i / 16)
+	{
+		arr[c] = i % 16;
+		c++;
+	}
+	for (j = c - 1; j >= 0; j--)
+	{
+		if (arr[j] > 9)
+		{
+			arr[j] = arr[j] + 39;
+		}
+		_putchar('0' + arr[j]);
+	}
+	return (c);
+}
