@@ -15,7 +15,8 @@ int _printf(const char *format, ...)
 	ft a[] = {{'c', print_char}, {'s', print_str}, {'d', print_int},
 		  {'i', print_int}, {'b', print_bin}, {'u', print_ui},
 		  {'o', print_oct}, {'x', print_hex}, {'X', print_HEX},
-		  {'R', print_rot13}, {'r', print_rev}, {'\0', NULL},
+		  {'R', print_rot13}, {'r', print_rev},
+		  {'S', print_S}, {'\0', NULL},
 	};
 
 	if (format == NULL || (format[i] == '%' && format[i + 1] == '\0'))
@@ -31,7 +32,7 @@ int _printf(const char *format, ...)
 		else
 		{
 			i++;
-			for (j = 0; j < 11; j++)
+			for (j = 0; j < 12; j++)
 			{
 				if (format[i] == a[j].id)
 				{
@@ -41,7 +42,7 @@ int _printf(const char *format, ...)
 					break;
 				}
 			}
-			if (j == 11)
+			if (j == 12)
 			{
 				c = print_spe(format[i]);
 				count = count + c;
