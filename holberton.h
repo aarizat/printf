@@ -21,4 +21,5 @@ int print_int(va_list integer);
 int _printf(const char *format, ...);
 int print_spe(char c);
 int print_bin(va_list n);
+int print_ui(va_list ui);
 #endif /*_HOLBERTON_H*/
