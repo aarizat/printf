@@ -10,7 +10,8 @@
 
 int print_ui(va_list ui)
 {
-	int len, i, n, count = 0;
+	int len, i, count = 0;
+	unsigned int n;
 
 	n = va_arg(ui, unsigned int);
 	i = 1;
